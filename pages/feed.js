@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/notion";
 import { generateRss } from "@/lib/rss";
+
 export async function getServerSideProps({ res }) {
   res.setHeader("Content-Type", "text/xml");
   const posts = await getAllPosts({ includePages: false });
@@ -11,5 +12,7 @@ export async function getServerSideProps({ res }) {
     props: {},
   };
 }
+
 const feed = () => null;
+
 export default feed;

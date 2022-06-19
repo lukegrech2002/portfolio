@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 const SearchLayout = ({ tags, posts, currentTag }) => {
   const [searchValue, setSearchValue] = useState("");
   let filteredBlogPosts = [];
+
   if (posts) {
     filteredBlogPosts = posts.filter((post) => {
       const tagContent = post.tags ? post.tags.join(" ") : "";
@@ -53,9 +54,11 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
     </Container>
   );
 };
+
 SearchLayout.propTypes = {
   posts: PropTypes.array.isRequired,
   tags: PropTypes.object.isRequired,
   currentTag: PropTypes.string,
 };
+
 export default SearchLayout;

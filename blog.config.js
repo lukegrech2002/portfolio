@@ -6,55 +6,36 @@ const BLOG = {
   description: "Portfolio & Blog",
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: "auto", // ['light', 'dark', 'auto'],
-  font: "sans-serif", // ['sans-serif', 'serif']
-  lightBackground: "#ffffff", // use hex value, don't forget '#' e.g #fffefc
-  darkBackground: "#18181B", // use hex value, don't forget '#'
-  path: "", // leave this empty unless you want to deploy Nobelium in a folder
-  since: 2021, // If leave this empty, current year will be used.
+  font: "sans-serif",
+  lightBackground: "#ffffff",
+  darkBackground: "#18181B", 
+  path: "",
   postsPerPage: 7,
   sortByDate: false,
   showArchive: true,
-  autoCollapsedNavBar: false, // The automatically collapsed navigation bar
+  autoCollapsedNavBar: false,
   // ogImageGenerateURL: '', // The link to generate OG image, don't end with a slash
   socialLink: "https://instagram.com/lukegrc",
   seo: {
     keywords: ["Blog", "Website", "Notion"],
     googleSiteVerification: "", // Remove the value or replace it with your own google site verification code
   },
-  notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
-  notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
+  notionPageId: process.env.NOTION_PAGE_ID,
+  notionAccessToken: process.env.NOTION_ACCESS_TOKEN,
   analytics: {
-    provider: "", // Currently we support Google Analytics and Ackee, please fill with 'ga' or 'ackee', leave it empty to disable it.
-    ackeeConfig: {
-      tracker: "", // e.g 'https://ackee.test.net/tracker.js'
-      dataAckeeServer: "", // e.g https://ackee.test.net , don't end with a slash
-      domainId: "", // e.g '0e2257a8-54d4-4847-91a1-0311ea48cc7b'
-    },
+    provider: "ga",
     gaConfig: {
-      measurementId: "", // e.g: G-XXXXXXXXXX
+      apiKey: "AIzaSyCGcYiW8aPh6hD3tDE-xwDGYQ_CVv8w5ik",
+      authDomain: "portfolio-website-3d202.firebaseapp.com",
+      projectId: "portfolio-website-3d202",
+      storageBucket: "portfolio-website-3d202.appspot.com",
+      messagingSenderId: "503415706034",
+      appId: "1:503415706034:web:94413304d22e82a75654ab",
+      ///
+      measurementId: "G-CP9M1NS7YF",
     },
   },
-  comment: {
-    // support provider: gitalk, utterances, cusdis
-    provider: "", // leave it empty if you don't need any comment plugin
-    gitalkConfig: {
-      repo: "", // The repository of store comments
-      owner: "",
-      admin: [],
-      clientID: "",
-      clientSecret: "",
-      distractionFreeMode: false,
-    },
-    utterancesConfig: {
-      repo: "",
-    },
-    cusdisConfig: {
-      appId: "", // data-app-id
-      host: "https://cusdis.com", // data-host, change this if you're using self-hosted version
-      scriptSrc: "https://cusdis.com/js/cusdis.es.js", // change this if you're using self-hosted version
-    },
-  },
-  isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
+  isProd: process.env.VERCEL_ENV,
 };
 
 module.exports = BLOG;
